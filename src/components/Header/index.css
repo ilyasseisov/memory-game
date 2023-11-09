@@ -1,0 +1,53 @@
+:root {
+  --text: #202426;
+  --card: #202426;
+  --bg: #eeeeee;
+
+  --delay: 200ms;
+  --rotate-0: rotateY(0deg);
+  --rotate-90: rotateY(90deg);
+  --transition: all ease-in 200ms;
+
+  --radius: 12px;
+  --shadow: 0px 4px 16px #44444460;
+
+  --card-width: 160px;
+  --card-width-mobile: 120px;
+  --card-enter: enter 600ms ease;
+  --card-enter-2: enter-2 600ms ease;
+
+  --font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+header {
+  width: 220px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: var(--card);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  animation: var(--card-enter-2);
+  margin-bottom: 32px;
+  position: fixed;
+  top: 40px;
+  left: 20px;
+}
+
+h4 {
+  margin: auto;
+  color: white;
+  font-size: 20px;
+}
+
+@keyframes enter-2 {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -40px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}

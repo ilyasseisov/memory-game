@@ -1,0 +1,77 @@
+/* Tip: If you see an "Unknown at rule @import-normalize css(unknownAtRules)"
+warning in VSCode,change the css.lint.unknownAtRules setting to ignore. */
+@import-normalize;
+
+:root {
+  --text: #202426;
+  --card: #202426;
+  --bg: #eeeeee;
+
+  --delay: 200ms;
+  --rotate-0: rotateY(0deg);
+  --rotate-90: rotateY(90deg);
+  --transition: all ease-in 200ms;
+
+  --radius: 12px;
+  --shadow: 0px 4px 16px #44444460;
+
+  --card-width: 160px;
+  --card-width-mobile: 120px;
+  --card-enter: enter 600ms ease;
+  --card-enter-2: enter-2 600ms ease;
+
+  --font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  padding: 32px;
+  overflow: hidden;
+  display: flex;
+  color: var(--text);
+  background: var(--bg);
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-family);
+}
+
+/* ========= Menu ======================== */
+
+/* ========= Grid ========================= */
+.grid {
+  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+}
+
+/* ========= Card ========================= */
+
+/* ========= Mobile ===================== */
+@media screen and (max-width: 720px) {
+  body {
+    align-items: center;
+    height: auto;
+    overflow-y: auto;
+  }
+
+  .grid {
+    margin-top: 120px;
+    grid-template-columns: repeat(2, auto);
+    gap: 8px;
+  }
+}
+
+/* to put confetti on top of all */
+canvas {
+  z-index: 10 !important;
+}

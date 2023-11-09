@@ -1,0 +1,74 @@
+:root {
+  --text: #202426;
+  --card: #202426;
+  --bg: #eeeeee;
+
+  --delay: 200ms;
+  --rotate-0: rotateY(0deg);
+  --rotate-90: rotateY(90deg);
+  --transition: all ease-in 200ms;
+
+  --radius: 12px;
+  --shadow: 0px 4px 16px #44444460;
+
+  --card-width: 160px;
+  --card-width-mobile: 120px;
+  --card-enter: enter 600ms ease;
+  --card-enter-2: enter-2 600ms ease;
+
+  --font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.card {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  width: var(--card-width);
+  animation: var(--card-enter);
+  border-radius: var(--radius);
+}
+.card img {
+  width: 100%;
+}
+.card-face,
+.card-back {
+  padding: 16px;
+  background: var(--card);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+.card-face {
+  position: absolute;
+  transform: var(--rotate-90);
+}
+.card-back {
+  transform: var(--rotate-0);
+  transition-delay: var(--delay);
+}
+.selected .card-face {
+  transform: var(--rotate-0);
+  transition-delay: var(--delay);
+}
+.selected .card-back {
+  transform: var(--rotate-90);
+  transition-delay: 0s;
+}
+@keyframes enter {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .card {
+    width: var(--card-width-mobile);
+  }
+}

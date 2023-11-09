@@ -1,0 +1,85 @@
+.bubble {
+  position: absolute;
+  padding: 8px;
+  text-align: center;
+  bottom: 0;
+}
+
+.bubble button {
+  padding: 12px 24px;
+  border: none;
+  outline: none;
+  border-radius: 12px;
+  font-size: 16px;
+  color: #202426;
+  transition: all 0.3s linear;
+  background-color: rgb(221, 221, 221);
+  user-select: none;
+}
+
+.bubble button.small {
+  padding: 6px 12px;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #202426;
+  transition: all 0.3s linear;
+  background-color: rgb(221, 221, 221);
+}
+
+.bubble button.small:nth-of-type(1) {
+  margin-right: 16px;
+}
+
+.bubble button.small:nth-of-type(2) {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.bubble button:hover {
+  cursor: pointer;
+  transform: translateY(4px);
+}
+
+.bubble button.primary:hover {
+  background-color: rgb(211, 211, 211);
+}
+
+.bubble .callout {
+  width: 160px;
+  padding: 20px;
+  border-radius: 12px;
+  background: rgb(211, 211, 211);
+  position: absolute;
+  top: -128px;
+  left: 10px;
+  margin-bottom: 12px;
+  transition: all 0.3s ease-out;
+  /* --- */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px);
+}
+
+.bubble .callout::after {
+  content: '';
+  border: 20px solid transparent;
+  position: absolute;
+  border-top-color: rgb(211, 211, 211);
+  border-bottom: 0;
+  bottom: -20px;
+  left: 50%;
+  margin-left: -20px;
+}
+
+.bubble .callout.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+}
+
+.bubble .callout p {
+  font-size: 18px;
+  margin-bottom: 16px;
+}
